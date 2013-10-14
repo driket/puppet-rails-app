@@ -1,0 +1,16 @@
+# config/application.yml
+defaults: &defaults
+<% for setting in @settings -%>
+<% setting.each do |key, value| -%>
+  <%= key %>: <%= value %>
+<% end -%>
+<% end -%>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
